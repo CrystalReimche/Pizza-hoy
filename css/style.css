@@ -1,0 +1,141 @@
+/*  *************************************
+							FONT
+*************************************   */
+
+@font-face {
+	font-family: orderPizza;
+	src: url(../font/orderPizza.ttf);
+}
+@font-face {
+	font-family: Quickhand;
+	src: url(../font/Quikhand.ttf);
+}
+
+/*  *************************************
+							BODY
+*************************************   */
+
+body {
+	background: url(../img/Pizza-oven.jpg) no-repeat center center fixed;
+	background-size: cover;
+	font-family: orderPizza;
+	font-size: .7rem;
+}
+
+/*  *************************************
+							NAVBAR
+*************************************   */
+
+.navbar {
+	background: linear-gradient(to bottom, #7f0000 0%, #460000 75%, #460000 100%);
+	height: 75px;
+}
+.navbar-brand {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 2rem;
+}
+a {
+	color: white;
+}
+a:hover {
+	color: white;
+	font-weight: 700;
+}
+
+/*  *************************************
+							MENU
+*************************************   */
+
+.container {
+	max-width: 50%;
+}
+.menu {
+	background: #7f0000;
+	background: linear-gradient(to bottom, rgba(127, 0, 0, 0.8) 0%, rgba(70, 0, 0, 0.8) 75%, rgba(70, 0, 0, 0.8) 100%);
+	margin-top: 3%;
+	padding: 25px 25px 10px 25px;
+	border-radius: 35px;
+	width: 60%;
+	font-family: Quickhand;
+	color: white;
+	font-size: 1.3rem;
+	font-weight: 500;
+}
+legend {
+	text-decoration: underline;
+}
+.col-md-4 {
+	padding-left: 50px;
+}
+.row-bottom {
+	margin-top: 30px;
+}
+
+/*  *************************************
+				REVIEW ORDER BUTTON
+*************************************   */
+
+.button {
+	width: 50%;
+	height: 60px;
+	margin: 2% auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 0px 3px rgba(128, 128, 128, 1);
+}
+.button:active {
+	-webkit-box-shadow: 0px 3px rgba(128, 128, 128, 1), 0px 4px rgba(118, 118, 118, 1), 0px 5px rgba(108, 108, 108, 1), 0px 6px rgba(98, 98, 98, 1), 0px 7px rgba(88, 88, 88, 1), 0px 8px rgba(78, 78, 78, 1), 0px 10px 2px 0px rgba(128, 128, 128, .6);
+	/* shadow */
+}
+button:focus {
+	outline: 0;
+}
+span {
+	font-size: 1.3rem;
+}
+
+/*  *************************************
+					ORDER TABLE
+*************************************   */
+
+.modal-content {
+	padding: 5% 5% 2% 5% ;
+}
+tr > .options {
+	width: 25%;
+	font-family: Quickhand;
+	font-size: 1.3rem;
+	font-weight: 500;
+}
+tr > .price {
+	width: 20%;
+	font-family: Quickhand;
+	font-size: 1.3rem;
+	font-weight: 500;
+}
+
+tr > .choices{
+	font-family: Quickhand;
+	font-size: 1.3rem;
+	font-weight: 500;
+}
+#total {
+	text-align: right;
+	font-weight: bold;
+	font-size: 1.7rem;
+}
+#totalPrice {
+	font-weight: bold;
+	font-size: 1.7rem;
+}
+.btn-lg {
+	padding-top: 4%;
+	font-size: 1rem;
+	height: 29%;
+}

@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<title>Pizza&#39;hoy</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,600,700" rel="stylesheet">
+
+
+</head>
+
+<body>
+	<div class="container-fluid">
+
+		<!--  *************************************
+								NAVIGATION
+		*************************************   -->
+
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-lg">
+				<a class="navbar-brand" href="#">Pizza&#39;hoy</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+					<ul class="nav">
+						<li class="nav-item">
+							<a class="nav-link active" href="#">Coupons</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Locations</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">About Us</a>
+						</li>
+					</ul>
+
+				</div>
+			</nav>
+		</div>
+
+		<!--  *************************************
+								ORDER MENU
+		*************************************   -->
+
+		<div class="container menu">
+			<div class="row row-top">
+				<div class="col-md-4 size-crust-cheese" >
+					<form class="pizzaForm">
+						<fieldset class="form-group">
+							<div class="row">
+								<legend class="col-form-label col-sm-10 pt-0">Choose your size...</legend>
+								<div class="col-sm-10">
+									<div class="sizes">
+										<div class="radio">
+											<label>
+												<input type="radio" name="size_options" id="personal" value="Personal" onchange="sizeSelected()" onclick="total()"> Personal (10")
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="size_options" id="medium" value="Medium" onchange="sizeSelected()" onclick="total()"> Medium (12")
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="size_options" id="large" value="Large" onchange="sizeSelected()" onclick="total()"> Large (14")
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="size_options" id="extra_large" value="Extra-large" onchange="sizeSelected()" onclick="total()"> Extra-large (16")
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-4">
+					<form class="pizzaForm">
+						<fieldset class="form-group">
+							<div class="row">
+								<legend class="col-form-label col-sm-10 pt-0">Choose your crust...</legend>
+								<div class="col-sm-10">
+									<div class="crust">
+										<div class="radio">
+											<label>
+												<input type="radio" name="crust_options" id="plain_crust" value="Plain crust" onchange="crustSelected()" onclick="total()"> Plain crust
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="crust_options" id="garlic_crust" value="Garlic butter crust" onchange="crustSelected()" onclick="total()"> Garlic butter crust
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="crust_options" id="cheese_stuffed_crust" value="Cheese stuffed crust" onchange="crustSelected()" onclick="total()"> Cheese stuffed crust
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="crust_options" id="spicy_crust" value="Spicy crust" onchange="crustSelected()" onclick="total()"> Spicy crust
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="crust_options" id="house_crust" value="House special crust" onchange="crustSelected()" onclick="total()"> House special crust
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-4">
+					<form>
+						<fieldset class="form-group">
+							<div class="row">
+								<legend class="col-form-label col-sm-10 pt-0">Choose your cheese...</legend>
+								<div class="col-sm-10">
+									<div class="cheese">
+										<div class="radio">
+											<label>
+												<input type="radio" name="cheese_options" id="regular" value="Regular" onchange="cheeseSelected()" onclick="total()"> Regular
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="cheese_options" id="no_cheese" value="No cheese" onchange="cheeseSelected()" onclick="total()"> No cheese
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="cheese_options" id="extra_cheese" value="Extra cheese" onchange="cheeseSelected()" onclick="total()"> Extra cheese
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+
+			<div class="row row-bottom">
+				<div class="col-md-4">
+					<form>
+						<fieldset class="form-group">
+							<div class="row">
+								<legend class="col-form-label col-sm-10 pt-0">Choose your sauce...</legend>
+								<div class="col-sm-10">
+									<div class="sauce">
+										<div class="radio">
+											<label>
+												<input type="radio" name="sauce_options" id="marinara" value="Marinara sauce" onchange="sauceSelected()" onclick="total()"> Marinara sauce
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="sauce_options" id="white" value="White sauce" onchange="sauceSelected()" onclick="total()"> White sauce
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="sauce_options" id="barbeque" value="Barbeque sauce" onchange="sauceSelected()" onclick="total()"> Barbeque sauce
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="sauce_options" id="no_sauce" value="No sauce" onchange="sauceSelected()" onclick="total()"> No sauce
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-4">
+					<form>
+						<fieldset class="form-group">
+							<div class="row">
+								<legend class="col-form-label col-sm-10 pt-0">Choose your meats...</legend>
+								<div class="col-sm-10">
+									<div class="meats">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="meat_options" id="pepperoni" value="Pepperoni" onchange="meatSelected()" onclick="total()"> Pepperoni
+											</label>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="meat_options" id="sausage" value="Sausage" onchange="meatSelected()" onclick="total()"> Sausage
+											</label>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="meat_options" id="canadian_bacon" value="Canadian Bacon" onchange="meatSelected()" onclick="total()"> Canadian Bacon
+											</label>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="meat_options" id="ground_beef" value="Ground Beef" onchange="meatSelected()" onclick="total()"> Ground Beef
+											</label>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="meat_options" id="anchovy" value="Anchovy" onchange="meatSelected()" onclick="total()"> Anchovy
+											</label>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="meat_options" id="chicken" value="Chicken" onchange="meatSelected()" onclick="total()"> Chicken
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-4">
+					<form>
+						<fieldset class="form-group">
+							<div class="row">
+								<legend class="col-form-label col-sm-10 pt-0">Choose your veggies...</legend>
+								<div class="col-sm-10">
+									<div class="veggies">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="veggie_options" id="tomatoes" value="Tomatoes" onchange="veggieSelected()" onclick="total()"> Tomatoes
+											</label>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="veggie_options" id="onions" value="Onions" onchange="veggieSelected()" onclick="total()"> Onions
+											</label>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="veggie_options" id="olives" value="Olives" onchange="veggieSelected()" onclick="total()"> Olives
+											</label>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="veggie_options" id="green_peppers" value="Green Peppers" onchange="veggieSelected()" onclick="total()"> Green Peppers
+											</label>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="veggie_options" id="mushrooms" value="Mushrooms" onchange="veggieSelected()" onclick="total()"> Mushrooms
+											</label>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="veggie_options" id="pineapple" value="Pineapple" onchange="veggieSelected()" onclick="total()"> Pineapple
+											</label>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="veggie_options" id="spinach" value="Spinach" onchange="veggieSelected()" onclick="total()"> Spinach
+											</label>
+										</div>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" name="veggie_options" id="jalapeno" value="Jalapeno" onchange="veggieSelected()" onclick="total()"> Jalapeno
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+		<!--  *************************************
+								ORDER
+		*************************************   -->
+		<div class="container">
+			<!-- Button trigger modal -->
+			<button type="button" class="button" data-toggle="modal" data-target="#exampleModalCenter">
+				<span>Review Order</span>
+			</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLongTitle">Pizza Order:</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<tbody>
+										<tr>
+											<th class="options" scope="row">Size: </th>
+											<td class="choices" id="size"></td>
+											<td class="price" id="sizePrice"></td>
+										</tr>
+										<tr>
+											<th class="options" scope="row">Crust:</th>
+											<td class="choices" id="crust"></td>
+											<td class="price" id="crustPrice"></td>
+										</tr>
+										<tr>
+											<th class="options" scope="row">Cheese:</th>
+											<td class="choices" id="cheese"></td>
+											<td class="price" id="cheesePrice"></td>
+										</tr>
+										<tr>
+											<th class="options" scope="row">Sauce:</th>
+											<td class="choices" id="sauce"></td>
+											<td class="price" id="saucePrice"></td>
+										</tr>
+										<tr>
+											<th class="options" scope="row">Meat:</th>
+											<td class="choices" id="meat"></td>
+											<td class="price" id="meatPrice"></td>
+										</tr>
+										<tr>
+											<th class="options" scope="row">Veggies:</th>
+											<td class="choices" id="veggie"></td>
+											<td class="price" id="veggiePrice"></td>
+										</tr>
+										<tr>
+											<th class="options" id="total" colspan="2" scope="row">Total:</th>
+											<td class="price" id="totalPrice"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class=" btn-lg" data-dismiss="modal">Cancel</button>
+							<button type="button" class=" btn-lg">Place Order</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!-- Optional JavaScript -->
+	<script type="text/javascript" src="js/script.js"></script>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
